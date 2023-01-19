@@ -15,11 +15,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     
-    $lista = ["contacts", "Who am I", "What do I do"];
+    $lista = ["contacts", "introduction", "explenation"];
 
     return view('home', $list = [
-        "lista" => $lista
+        "lista" => $lista,
     ]);
 })->name("index");
 
+Route::get('/contacts', function() {
+
+    return view('contacts');
+})->name("contacts");
+
+Route::get('/whoAmI', function() {
+
+    return view('introduction');
+})->name("introduction");
+
+Route::get('/whatDoIDo', function() {
+
+    return view('explenation');
+})->name("explenation");
 
